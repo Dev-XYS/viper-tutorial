@@ -46,7 +46,7 @@ method QSort(xs: Seq[Ref]) returns (ys: Seq[Ref])
   * The postcondition is assumed after the method call (more precisely, it is [_inhaled_](#inhaling-and-exhaling))
 * See the [permission section](#permissions) for more details and examples
 
-### Functions
+### Functions {#intro-functions}
 
 ```silver
 function gte(x: Ref, a: Int): Int
@@ -67,7 +67,7 @@ function gte(x: Ref, a: Int): Int
 * Unlike methods, function applications are not handled modularly (for functions with bodies): changing the body of a function affects client code
 * See the [section on functions](#functions) for details
 
-### Predicates
+### Predicates {#intro-predicates}
 
 ```silver
 predicate list(this: Ref) {
@@ -129,11 +129,12 @@ define link(x, y) {
 * `Ref` for references (to objects, except for the built-in `Ref` constant `null`)
 * `Bool` for Boolean values
 * `Int` for mathematical (unbounded) integers
-* `Rational` for mathematical (unbounded) rationals
+* `Rational` for mathematical (unbounded) rationals (this type is expected to be deprecated in the summer 2023 release)
 * `Perm` for permission amounts (see the [section on permissions](#permissions) for details)
 * `Seq[T]` for immutable sequences with element type `T`
 * `Set[T]` for immutable sets with element type `T`
 * `Multiset[T]` for immutable multisets with element type `T`
+* `Map[T, V]` for immutable maps with key type `T` and value type `V`
 * Additional types can be defined via [domains](#domains)
 
 ## Imports
